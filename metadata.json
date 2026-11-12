@@ -1,0 +1,6 @@
+{
+  "name": "Smart Attendance",
+  "description": "Vibrant mobile-first attendance app prototype for university students and lecturers with live refreshing QR codes and seamless check-in tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

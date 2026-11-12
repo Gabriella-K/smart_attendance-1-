@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --font-nunito: 'Nunito', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+
+  --color-campus-navy: #1F2A44;
+  --color-campus-beige: #E8DCC8;
+  --color-campus-gold: #C6A75E;
+  --color-campus-ivory: #FAF8F3;
+  --color-campus-dark: #252733;
+  --color-campus-muted: #706B62;
+  --color-campus-green: #4F8A67;
+  --color-campus-amber: #C28B3C;
+  --color-campus-red: #B95757;
+  --color-campus-border: #E8DCC8;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #252733;
+    background-color: #FAF8F3;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-nunito), -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1F2A44;
+  }
+}
+
+/* Custom animations for scanner and live QR */
+@keyframes scan-beam {
+  0% {
+    top: 6%;
+    opacity: 0.9;
+  }
+  50% {
+    top: 92%;
+    opacity: 1;
+  }
+  100% {
+    top: 6%;
+    opacity: 0.9;
+  }
+}
+
+.animate-scan-beam {
+  animation: scan-beam 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(23, 107, 80, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 24px 6px rgba(242, 185, 67, 0.45);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s infinite ease-in-out;
+}
+
+/* Character & campus motion animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1.5deg);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotate(-1.5deg);
+  }
+}
+
+.animate-float-reverse {
+  animation: float-reverse 4.5s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(1.018) translateY(-4px);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 3.6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes cloud-drift {
+  0% {
+    transform: translateX(-15px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(-15px);
+  }
+}
+
+.animate-cloud-drift {
+  animation: cloud-drift 12s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 2.5s ease-in-out infinite;
+}
+
+@keyframes subtle-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: subtle-shimmer 3.5s infinite;
+}
+
+/* Hide scrollbar for clean mobile tabs & horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
